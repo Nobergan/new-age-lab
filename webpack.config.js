@@ -98,7 +98,8 @@ function createConfig(configName = "") {
       }),
       new HtmlWebpackPlugin({
         disable: isDev,
-        filename: isDev ? `index.html` : "../index.php",
+        // filename: isDev ? `index.html` : "../index.php",
+        filename: `index.html`,
         template: `./src/${name}/index.ejs`,
         minify: false,
         inject: "body",
