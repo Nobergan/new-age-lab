@@ -1,0 +1,341 @@
+.header__lang {
+    padding: 10px 0;
+
+    @include flex(flex, center, right, unset);
+
+    @include for-size(desktop) {
+        padding: 20px 0;
+    }
+
+    &-item {
+        width: 36px;
+        height: 26px;
+        padding: 5px 10px;
+
+        @include font(400, 12px, 1.2);
+
+        color: $third-text_color;
+        background-color: $primary_background;
+        border: 1px solid $accent_color;
+        border-radius: 5px;
+        cursor: pointer;
+
+        @include for-size(desktop) {
+            width: 40px;
+            height: 30px;
+            font-size: 15px;
+        }
+    }
+
+    &-item:not(:last-child) {
+        margin: 0 7px 0 0;
+    }
+
+    &-item:focus,
+    &-item:hover,
+    &-item:active {
+        color: $btn_text;
+        background-color: $accent_color;
+    }
+
+    &-item.active {
+        color: $btn_text;
+        background-color: $accent_color;
+    }
+}
+
+// UNDER LANG
+
+.header__box {
+    padding: 20px 0 30px;
+    // border-top: 1px solid $accent_color;
+    // border-bottom: 1px solid $accent_color;
+
+    background: rgba($color: #f5f4fa, $alpha: 0.5);
+
+    @include for-size(tablet) {
+        padding: 20px 0;
+    }
+
+    & .container {
+        @include for-size(tablet) {
+            display: flex;
+            justify-content: space-between;
+
+            margin: 0 auto 10px;
+        }
+    }
+}
+
+.header__logo {
+    width: 170px;
+    margin: 0 auto 20px;
+
+    @include font(700, 35px, 1.17);
+
+    color: $primary-text_color;
+
+    @include for-size(tablet) {
+        width: unset;
+        margin: -40px 35px 0 0;
+
+        @include font(700, 55px, 1.17);
+    }
+
+    &--part {
+        color: $accent_color;
+    }
+}
+
+.header__list {
+    @include flex(flex, center, unset, column);
+    max-width: 450px;
+    margin: 0 auto 15px;
+
+    @include for-size(tablet) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        max-width: 620px;
+        margin: 0;
+    }
+
+    @include for-size(desktop) {
+        align-items: unset;
+        justify-content: space-between;
+    }
+
+    &-item::before {
+        content: url('../../img/header/bird.svg');
+        width: 12px;
+        max-height: 9px;
+        margin-right: 5px;
+    }
+
+    &-item {
+        @include flex(flex, center, unset, unset);
+        margin: 0 0 5px;
+
+        @include font(400, 12px, 1.2);
+
+        color: $primary-text_color;
+        cursor: pointer;
+
+        @include for-size(tablet) {
+            align-items: unset;
+            width: 200px;
+            margin: 0;
+            @include font(400, 16px, 1.2);
+        }
+    }
+
+    &-item:nth-child(-n + 4) {
+        @include for-size(tablet) {
+            margin: 0 0 10px;
+        }
+    }
+
+    &-item:last-child {
+        margin: 0;
+    }
+
+    &-item a {
+        text-decoration: none;
+        color: $primary-text_color;
+    }
+
+    &-item:hover a,
+    &-item:focus a,
+    &-item:active a {
+        color: $accent_color;
+    }
+}
+
+// MENU BTN MOB
+
+.menu-button {
+    margin: 0 10px 0 0;
+
+    &__icon-cross {
+        display: none;
+    }
+
+    &.is-open &__icon-menu {
+        display: none;
+    }
+
+    &.is-open &__icon-cross {
+        display: block;
+    }
+
+
+}
+
+.header__menu-title {
+    margin: 0 0 2px;
+
+    @include font(500, 18px, 1.2);
+
+    color: $btn_text;
+}
+
+//   MOB MENU
+
+.header__menu-mob {
+    position: relative;
+    display: flex;
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 10px;
+
+    background-color: $btn_background;
+    border-radius: 5px;
+    cursor: pointer;
+
+    @include for-size(tablet) {
+        display: none;
+    }
+}
+
+.mobile-menu {
+    display: none;
+
+    z-index: 100;
+
+    position: absolute;
+    top: 93%;
+    left: 0;
+    width: 100%;
+
+    @include font(500, 18px, 1.17);
+    text-align: left;
+
+    color: $primary-text_color;
+    background-color: $primary_background;
+
+    &.is-open {
+        display: block;
+
+        border-right: 2px solid $accent_color;
+        border-left: 2px solid $accent_color;
+        border-bottom: 2px solid $accent_color;
+    }
+
+    &__site-nav {
+        display: inline-block;
+        margin: 10px 0;
+    }
+
+    &__site-nav-item {
+        display: block;
+        position: relative;
+
+        &:not(:last-child) {
+            margin-bottom: 5px;
+        }
+    }
+}
+
+.mobile-menu__site-nav-link {
+    position: relative;
+    display: inline-block;
+
+    @include font(500, 15px, 1.17);
+    text-align: center;
+    text-decoration: none;
+
+    color: $primary-text_color;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &--mobile-active::after {
+        display: block;
+
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+        content: '';
+        width: 100%;
+        height: 3px;
+        background-color: $accent_color;
+        border-radius: 2px;
+    }
+
+    &--mobile-active {
+        color: $primary-text_color;
+        padding-bottom: 5px;
+    }
+
+    &:hover,
+    &:focus {
+        color: $primary-text_color;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 50px;
+    }
+}
+
+//   DESK MENU
+
+.header__menu-desk {
+    display: none;
+
+    @include for-size(tablet) {
+        display: block;
+        border-bottom: 4px solid $accent_color;
+    }
+
+}
+
+.desk-menu__site-nav {
+    @include for-size(tablet) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &-item {
+        @include for-size(tablet) {
+            padding: 15px 22px;
+            font-size: 16px;
+
+            @include font(500, 12px, 1.2);
+
+            color: $primary-text_color;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        @include for-size(desktop) {
+            padding: 15px 28px;
+            @include font(500, 15px, 1.2);
+        }
+
+    }
+
+    &-item:hover a,
+    &-item:focus a,
+    &-item:active a {
+        @include for-size(tablet) {
+            color: $accent_color;
+        }
+    }
+
+    &-item a {
+        @include for-size(tablet) {
+
+            color: $primary-text_color;
+            text-transform: uppercase;
+        }
+    }
+
+    &-item:not(:last-child) {
+        @include for-size(tablet) {
+            border-right: 2px solid $accent_color;
+        }
+
+    }
+}

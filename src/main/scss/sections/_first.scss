@@ -1,0 +1,196 @@
+.first {
+    padding: 20px 0 30px;
+
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4),
+            rgba(47, 48, 58, 0.4)),
+        url('../../img/first/form-bg-img-first.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include for-size(tablet) {
+        padding: 60px 0;
+
+        background-image: linear-gradient(rgba(47, 48, 58, 0.4),
+                rgba(47, 48, 58, 0.4)),
+            url('../../img/first/form-bg-img-desktop.jpg');
+    }
+
+    & .container {
+        @include for-size(tablet) {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+    }
+}
+
+// FORM
+
+.form {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto 20px;
+    padding: 30px 20px;
+
+    background-color: rgba($color: #ffffff, $alpha: 0.8);
+    box-shadow: 1px 1.7px 4px rgba(1, 1, 1, 0.25);
+    border-radius: 10px;
+
+    @include for-size(tablet) {
+        max-width: 320px;
+        margin: 0;
+        padding: 40px 20px;
+    }
+
+    @include for-size(desktop) {
+        max-width: 380px;
+    }
+
+    &__title {
+        margin: 0 auto 15px;
+    
+        @include font(500, 27px, 1.2);
+        text-align: center;
+    
+        color: $primary-text_color;
+    
+        @include for-size(tablet) {
+            @include font(500, 30px, 1.2);
+        }
+    }
+    
+    & label {
+        @include font(400, 16px, 1.2);
+    
+        color: $primary-text_color;
+    }
+    
+    &__input-box label {
+        min-width: 47%;
+        max-width: 47%;
+    }
+    
+    & input {
+        margin: 0 0 25px;
+        padding: 8px;
+    
+        outline: none;
+        //   box-shadow: none;
+        border: 1px solid $primary-text_color;
+        border-radius: 5px;
+    }
+    
+    & input:first-child {
+        width: 100%;
+    }
+    
+    & input::placeholder {
+        @include font(400, 14px, 1.2);
+    }
+    
+    & input:focus {
+        border-color: $accent_color;
+    }
+    
+    &__input-box {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    &__btn {
+        width: 170px;
+        height: 40px;
+        padding: 9px 30px;
+        margin: -10px 0 0;
+    
+        @include font(500, 18px, 1.2);
+    
+        color: $btn_text;
+        background-color: $btn_background;
+        border-radius: 5px;
+    
+        @include for-size(tablet) {
+            width: 100%;
+            margin: 0;
+        }
+    }
+    
+    &__btn:hover,
+    &__btn:focus,
+    &__btn:active {
+        color: $third-text_color;
+        background-color: $primary_background;
+        border: 1px solid $accent_color;
+    }
+}
+
+// BOX
+
+.first__box {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 20px;
+
+    background-color: rgba($color: #ffffff, $alpha: 0.8);
+    box-shadow: 1px 1.7px 4px rgba(1, 1, 1, 0.25);
+    border-radius: 10px;
+
+    @include for-size(tablet) {
+        max-width: 320px;
+        margin: 0;
+        padding: 30px 20px;
+    }
+
+    @include for-size(desktop) {
+        max-width: 380px;
+    }
+
+    & .first__descr {
+        margin: 0 0 10px;
+    
+        @include font(400, 16px, 1.2);
+    
+        color: $primary-text_color;
+    
+        @include for-size(tablet) {
+            margin: 0 0 15px;
+            @include font(400, 19px, 1.2);
+        }
+    }
+    
+    & .first__accent {
+        margin: 0 0 15px;
+    
+        @include font(700, 16px, 1.2);
+    
+        color: $primary-text_color;
+    
+        @include for-size(tablet) {
+            margin: 0 0 20px;
+            @include font(400, 18px, 1.2);
+        }
+    }
+    
+    & .first__btn {
+        width: 170px;
+        height: 40px;
+        padding: 9px 30px;
+    
+        @include font(500, 18px, 1.2);
+    
+        color: $btn_text;
+        background-color: $btn_background;
+        border-radius: 5px;
+    }
+    
+    & .first__btn:hover,
+    & .first__btn:focus,
+    & .first__btn:active {
+        color: $third-text_color;
+        background-color: $primary_background;
+        border: 1px solid $accent_color;
+    }
+
+}
+

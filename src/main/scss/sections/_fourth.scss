@@ -1,0 +1,100 @@
+.fourth {
+  padding: 20px 0 30px;
+
+  background: $secondary_background;
+
+  @include for-size(tablet) {
+    padding: 60px 0;
+  }
+
+  &__title {
+    margin: 0 0 30px;
+
+    @include font(bold, 28px, 1.2);
+    text-align: center;
+    text-transform: uppercase;
+
+    color: $primary-text_color;
+  }
+}
+
+.fourth__list {
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+
+  @include for-size(tablet) {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: unset;
+  }
+
+  @include for-size(desktop) {
+    justify-content: space-between;
+  }
+
+  &-item {
+    margin-bottom: 15px;
+    background-color: rgba($third_background, 0.8);
+    border-radius: 16px;
+
+    @include for-size(tablet) {
+      max-width: 280px;
+    }
+  }
+
+  &-item-quest {
+    padding: 10px;
+    margin: 0;
+
+    @include font(bold, 16px, 1.2);
+    text-align: center;
+
+    color: $primary-text_color;
+    background: $primary_background;
+    box-shadow: 0px 24px 48px rgba(50, 54, 72, 0.24);
+    border-radius: 13px;
+  }
+
+  &-item-ans {
+    padding: 16px 11px;
+    margin: 0;
+
+    @include font(500, 14px, 1.2);
+    text-align: center;
+
+    color: $secondary-text_color;
+  }
+}
+
+.fourth__btn {
+  width: 100%;
+  max-width: 450px;
+  height: 50px;
+  margin: 0 auto;
+  padding: 14px;
+
+  @include font(800, 18px, 1.2);
+  text-align: center;
+
+  color: $secondary-text_color;
+  background: $btn_background;
+  box-shadow: 0px 24px 48px rgba(50, 54, 72, 0.24);
+  border-radius: 5px;
+  cursor: pointer;
+
+  @include for-size(tablet) {
+    margin: 15px auto 0;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $third-text_color;
+    background-color: $primary_background;
+    border: 1px solid $accent_color;
+  }
+}

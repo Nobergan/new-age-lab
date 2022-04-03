@@ -1,0 +1,112 @@
+html {
+  font-family: 'Architects Daughter', cursive;
+  font-family: 'Roboto', sans-serif;
+
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.container {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  .container {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media screen and (min-width: 940px) {
+  .container {
+    max-width: 960px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+img {
+  display: block;
+}
+
+a {
+  font-style: none;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+svg {
+  vertical-align: baseline;
+  fill: #ffffff;
+}
+
+button {
+  display: block;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0;
+
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+button:focus,
+button:active,
+button:hover {
+  outline: none;
+  box-shadow: none;
+  border: none;
+
+  // color: $accent_color;
+  // background-color: $btn-secondary_background;
+  // border: 1px solid $accent_color;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.is-hidden {
+  display: none;
+}
+
+.not-hidden {
+  display: block;
+}
+
+.valid {
+  border: 3px solid green;
+}
+
+.invalid {
+  border: 3px solid red;
+}
